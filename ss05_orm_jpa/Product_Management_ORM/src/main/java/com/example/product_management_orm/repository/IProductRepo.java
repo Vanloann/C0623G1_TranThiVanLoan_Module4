@@ -13,8 +13,6 @@ public interface IProductRepo {
 
     Product findById(Long id);
 
-    void update(Long id, Product product);
-
     void remove(Long id);
 
     List<Product> searchByName(String name);

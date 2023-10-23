@@ -29,11 +29,6 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
-    public void update(Long id, Product product) {
-
-    }
-
-    @Override
     public void remove(Long id) {
         productRepo.remove(id);
     }

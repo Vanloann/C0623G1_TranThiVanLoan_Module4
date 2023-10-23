@@ -47,11 +47,6 @@ public class ProductRepoImpl implements IProductRepo{
     }
 
     @Override
-    public void update(Long id, Product product) {
-
-    }
-
-    @Override
     public void remove(Long id) {
         Product product = findById(id);
         if (product != null) {
