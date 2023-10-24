@@ -31,7 +31,7 @@
         <div class="mb-3">
             <label for="category">Category</label>
             <select id="category" th:field="*{category}">
-                <option th:each="c : ${category}" th:value="${c.id}" th:text="${c.name}"></option>
+                <option th:each="c : ${categories}" th:value="${c.categoryId}" th:text="${c.name}"></option>
             </select>
         </div>
         <div class="mb-3">

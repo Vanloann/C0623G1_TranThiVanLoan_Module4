@@ -11,8 +11,8 @@ public class Blog {
     private String content;
     private String image;
     private String author;
-    @ManyToOne
-    @JoinColumn(name = "category_id")
+    @ManyToOne (cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id", referencedColumnName = "categoryId")
     private Category category;
 
     public Blog() {
@@ -65,7 +65,6 @@ public class Blog {
     public void setImage(String image) {
         this.image = image;
     }
-
     public String getAuthor() {
         return author;
     }

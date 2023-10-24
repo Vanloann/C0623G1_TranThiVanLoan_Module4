@@ -1,9 +1,7 @@
 package com.example.blog.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Category {
@@ -11,6 +9,9 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long categoryId;
     private String name;
+
+    @OneToMany (mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<Blog> blogs;
 
     public Category() {
     }
@@ -34,5 +35,13 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Blog> getBlogs() {
+        return blogs;
+    }
+
+    public void setBlogs(Set<Blog> blogs) {
+        this.blogs = blogs;
     }
 }

@@ -5,6 +5,9 @@ import com.example.blog.model.Category;
 import com.example.blog.service.IBlogService;
 import com.example.blog.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -29,9 +32,8 @@ public class BlogController {
 //    }
 
     @GetMapping
-    public ModelAndView showList() {
-        List<Blog> blogList = blogService.showList();
-        return new ModelAndView("list", "blogList", blogList);
+    public ModelAndView showList(@PageableDefault (value = 4) Pageable pageable) {
+        return new ModelAndView("list", "blogList", blogService.showList(pageable));
     }
 
     @GetMapping("/create")
@@ -48,12 +50,13 @@ public class BlogController {
     }
 
     @GetMapping("/view/{id}")
-    public ModelAndView showDetail(@PathVariable Long id) {
-        return new ModelAndView("view", "blog", blogService.findById(id));
+    public ModelAndView showDetail(@PathVariable Long id, Model model) {
+        return new ModelAndView("view", "blog", blogService.findById(id).get());
     }
 
     @GetMapping("/update/{id}")
-    public ModelAndView showUpdateForm(@PathVariable Long id) {
+    public ModelAndView showUpdateForm(@PathVariable Long id, Model model) {
+        model.addAttribute("categories", categoryService.showList());
         Optional<Blog> blog = blogService.findById(id);
         return new ModelAndView("update", "blog", blog.get());
     }
@@ -70,10 +73,11 @@ public class BlogController {
         return "redirect:/";
     }
 
-//    @GetMapping("/search_by_name")
-//    public ModelAndView search(@RequestParam("searchByName") String searchByName) {
-//        List<Product> productList = productService.searchByName(searchByName);
-//        return new ModelAndView("list", "productList", productList);
-//    }
+    @GetMapping("/search_by_name")
+    public ModelAndView search(@RequestParam("searchByName") String searchByName,@PageableDefault (value = 4) Pageable pageable) {
+        Page<Blog> blogList = blogService.searchByName(searchByName, pageable);
+        return new ModelAndView("list", "blogList", blogList);
+//        return "redirect:/";
+    }
 
 }
