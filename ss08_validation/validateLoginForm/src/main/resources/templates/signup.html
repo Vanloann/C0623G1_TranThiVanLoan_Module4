@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="container p-5 ali ">
+<div class="text-center my-4">
+    <h3>Registration</h3>
+</div>
+<div class="d-flex justify-content-center">
+    <form style="width: 450px" th:action="@{/create}" method="post" th:object="${userDTO}">
+        <div class="d-flex justify-content-between">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" th:field="*{firstName}">
+                <div style="color: darkred" class="form-text" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" aria-describedby="emailHelp" th:field="*{lastName}">
+                <div style="color: darkred" class="form-text" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">We'll never share your email with anyone else.</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" th:field="*{email}">
+            <div style="color: darkred" id="emailHelp" class="form-text" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="phoneNumber" class="form-label">Phone number</label>
+            <input type="text" class="form-control" id="phoneNumber" aria-describedby="emailHelp" th:field="*{phoneNumber}">
+            <div style="color: darkred" class="form-text" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control" id="age" aria-describedby="emailHelp" th:field="*{age}">
+            <div style="color: darkred" class="form-text" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label" th:field="*{password}">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+            <div style="color: darkred" class="form-text" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="text-center">
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-outline-dark">Sign up</button>
+        </div>
+
+    </form>
+</div>
+
+
+<!--<p class="text-center text-muted mt-5 mb-0">Have already an account?-->
+<!--    <a href="#!" class="fw-bold text-body"><u>Login here</u></a>-->
+<!--</p>-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</body>
+</html>
