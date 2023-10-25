@@ -13,18 +13,19 @@ public class UserDTO {
     private String lastName;
 
 
-    @Pattern(regexp = "^(((\\+84|84|0|0084){1})(3|5|7|8|9))+([0-9]{8})$")
+    @Pattern(regexp = "^(((\\+84|84|0|0084){1})(3|5|7|8|9))+([0-9]{8})$", message = "Phone number must include 10 numbers and start with 0")
     private String phoneNumber;
 
     @Min(18)
     private int age;
 
     @NotEmpty
-    @Pattern(regexp = "^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*$")
+    @Pattern(regexp = "^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*$", message = "Email should not contain any space or special characters(excep @ and .)")
     private String email;
 
     @NotEmpty
-    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-zA-Z]).{8,10}$")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,10}$", message = "Password must satisfy these following rules: " +
+            "minimum eight and maximum 10 characters, at least one uppercase letter, one lowercase letter, one number and one special character")
     private String password;
 
     public UserDTO() {
