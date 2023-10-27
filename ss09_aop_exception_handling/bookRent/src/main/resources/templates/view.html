@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="container" >
+<div class="p-4 d-flex justify-content-between">
+    <div class="mt-4">
+        <img th:src="@{${book.image}}" width="400px" height="500px" class="rounded" alt="...">
+    </div>
+
+    <div class=" container mt-4">
+        <p style="font-weight: bold; text-align: center" th:text="${book.name}"></p>
+        <p style="font-weight: bold; text-align: center"><span>By </span><span th:text="${book.author}"></span></p>
+        <hr>
+        <p th:text="${book.brief}"></p>
+        <hr>
+        <div class="text-center">
+            <a role="button" class="btn-btn-outline-dark text-decoration-none mb-4" th:href="@{/rent/create/{id}(id=${book.id})}">Rent Book</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>
