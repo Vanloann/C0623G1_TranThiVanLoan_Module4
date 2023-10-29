@@ -18,6 +18,7 @@
             <label for="code" class="form-label">Enter Book Code To Return: </label>
             <input type="number" class="form-control" name="bookCode"  id="code" >
         </div>
+        <div class="text-danger" th:if="${message}" th:text="${message}"></div>
 
         <div class="text-center">
             <button type="submit" class="btn btn-outline-dark my-3">Return</button>

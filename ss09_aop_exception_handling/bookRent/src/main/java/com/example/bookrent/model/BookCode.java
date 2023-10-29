@@ -8,6 +8,8 @@ public class BookCode {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codeId;
     private int code;
+
+    private int status;
     private int rentingAmount;
     @ManyToOne (cascade = CascadeType.ALL)
     @JoinColumn(name = "book_id", referencedColumnName = "id")
@@ -16,9 +18,10 @@ public class BookCode {
     public BookCode() {
     }
 
-    public BookCode(int codeId, int code, int rentingAmount, Book book) {
+    public BookCode(int codeId, int code, int status, int rentingAmount, Book book) {
         this.codeId = codeId;
         this.code = code;
+        this.status = 0;
         this.rentingAmount = rentingAmount;
         this.book = book;
     }
@@ -36,6 +39,14 @@ public class BookCode {
 
     public void setCode(int code) {
         this.code = code;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public Book getBook() {

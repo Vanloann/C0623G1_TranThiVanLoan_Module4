@@ -7,5 +7,6 @@ public interface IBookCodeService {
 
     BookCode findByCode(int code);
 
+    int generateRandomCode();
 
 }

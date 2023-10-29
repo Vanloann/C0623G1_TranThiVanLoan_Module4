@@ -1,10 +1,12 @@
 package com.example.bookrent.controller;
 
 import ch.qos.logback.classic.sift.AppenderFactoryUsingJoran;
+import com.example.bookrent.config.ExceptionHandler;
 import com.example.bookrent.model.Book;
 import com.example.bookrent.model.BookCode;
 import com.example.bookrent.service.IBookCodeService;
 import com.example.bookrent.service.IBookService;
+import com.example.bookrent.utils.MyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +26,7 @@ public class BookCodeController {
 
     @GetMapping("/create/{id}")
     public ModelAndView showRentingInf(@PathVariable Integer id, Model model) {
-        int code = (int) (Math.random() * 20001) + 10000;
+        int code = bookCodeService.generateRandomCode();
         model.addAttribute("codeRandom",code);
         model.addAttribute("bookTitle", bookService.findById(id));
         BookCode bookCode = new BookCode();
@@ -36,16 +38,18 @@ public class BookCodeController {
     }
 
     @PostMapping("/create")
-    public String rent(@ModelAttribute BookCode bookCode, RedirectAttributes redirectAttributes) throws Exception {
+    public String rent(@RequestParam (value = "rentingAmount", required = false) Integer rentingAmount, @ModelAttribute BookCode bookCode,  RedirectAttributes redirectAttributes) throws MyException {
         Book book = bookService.findById(bookCode.getBook().getId());
-        if (book.getQuantity() == 0) {
-            throw new Exception("This kind of book has been rented out!");
+        if (book.getQuantity() < rentingAmount) {
+            throw new MyException("Your renting quantity cannot exceed the remaining quantity of this kind of book!");
         } else {
             book.setQuantity(book.getQuantity()-bookCode.getRentingAmount());
+            bookCode.setStatus(1);
             bookCode.setBook(book);
             bookCodeService.create(bookCode);
-            return "redirect:/";
+            redirectAttributes.addFlashAttribute("noti", "Successfully rented book!");
         }
+        return "redirect:/";
     }
 
     @GetMapping("/return")
@@ -54,13 +58,22 @@ public class BookCodeController {
     }
 
     @PostMapping("/return")
-    public String returnBook(@RequestParam ("bookCode") Integer bookCode) {
+    public String returnBook(@RequestParam ("bookCode") Integer bookCode, Model model, RedirectAttributes redirectAttributes) {
         BookCode code = bookCodeService.findByCode(bookCode);
-        System.out.println(code.getRentingAmount());
-        Book book = code.getBook();
-        System.out.println(book.getQuantity());
-        book.setQuantity(book.getQuantity() + code.getRentingAmount());
-        bookCodeService.create(code);
+        if (code != null && code.getStatus() == 0) {
+            redirectAttributes.addFlashAttribute("message", "This book was returned before!");
+            return "redirect:/rent/return";
+        } else if (code == null) {
+            redirectAttributes.addFlashAttribute("message", "Wrong code!");
+            return "redirect:/rent/return";
+        } else {
+            code.setStatus(0);
+            System.out.println(code.getRentingAmount());
+            Book book = code.getBook();
+            System.out.println(book.getQuantity());
+            book.setQuantity(book.getQuantity() + code.getRentingAmount());
+            bookCodeService.create(code);
+        }
         return "redirect:/";
     }
 
