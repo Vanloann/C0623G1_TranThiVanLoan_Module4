@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Optional;
 
@@ -34,12 +35,14 @@ public class ProductController {
     }
 
     @GetMapping("/add/{id}")
-    public String addToCart(@PathVariable Integer id, @ModelAttribute("cart") CartDTO cart) {
+    public String addToCart(@PathVariable Integer id, @ModelAttribute("cart") CartDTO cart, RedirectAttributes redirectAttributes) {
         Optional<Product> product = productService.findById(id);
         if (product.isPresent()) {
             ProductDTO productDTO = new ProductDTO();
             BeanUtils.copyProperties(product.get(), productDTO);
             cart.addProduct(productDTO);
+            Long total = cart.getTotal();
+            redirectAttributes.addFlashAttribute("total", total);
         }
         return "redirect:/cart";
     }

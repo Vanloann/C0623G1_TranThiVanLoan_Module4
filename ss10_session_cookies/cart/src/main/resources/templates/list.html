@@ -24,9 +24,9 @@
 
   <h4 style="color: darkred" th:if="${productList.isEmpty()}">Nothing to display</h4>
 
-  <div class="d-flex justify-content-between" th:unless="${productList.isEmpty()}">
-    <div th:each="product : ${productList}">
-      <a class="text-decoration-none" th:href="@{/view/{id}(id=${product.id})}">
+  <div class="d-flex flex-wrap justify-content-between w-100" th:unless="${productList.isEmpty()}">
+    <div th:each="product : ${productList}" class="mb-5">
+      <a class="text-decoration-none " th:href="@{/view/{id}(id=${product.id})}">
         <div class="card" style="width: 18rem;">
           <img th:src="@{${product.image}}" class="card-img-top" th:alt="image">
           <div class="card-body text-center text-dark">

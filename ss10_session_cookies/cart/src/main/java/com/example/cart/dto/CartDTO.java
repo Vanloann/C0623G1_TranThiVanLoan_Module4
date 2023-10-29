@@ -25,4 +25,14 @@ public class CartDTO {
             productMap.put(productDTO, 1);
         }
     }
+
+    public Long getTotal() {
+        long total = 0;
+        for (Map.Entry<ProductDTO, Integer> entry : productMap.entrySet()) {
+           total += entry.getKey().getPrice() * entry.getValue();
+        }
+        return total;
+    }
+
+
 }
