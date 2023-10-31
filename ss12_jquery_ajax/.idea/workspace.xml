@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b83e6711-5683-4502-be02-d48af8b1444e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/blog/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog/src/main/resources/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog_ajax.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/model/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/repository/IBlogRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/repository/IBlogRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/repository/ICategoryRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/repository/ICategoryRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/service/IBlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/service/IBlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/service/ICategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/java/com/example/blog/service/ICategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/category_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/category_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/view_by_cate_id.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ss07_spring_boot/blog/src/main/resources/templates/view_by_cate_id.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/BlogApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/controller/BLogPMController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/controller/CategoryPMController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/model/Blog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/model/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/repository/IBlogRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/repository/ICategoryRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/service/BlogService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/service/CategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/service/IBlogService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/java/com/example/blog/service/ICategoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss11_JQuery_Ajax/blog/src/test/java/com/example/blog/BlogApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2XWAi0H5cmLUpDnEKS9R9zl7i2c" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/Tour-Booking/tour_booking_project" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b83e6711-5683-4502-be02-d48af8b1444e" name="Default Changelist" comment="" />
+      <created>1698734585415</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698734585415</updated>
+      <workItem from="1698734586584" duration="14648000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="188" key="FileChooserDialogImpl" timestamp="1698749132003">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="549" y="188" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1698749132003" />
+  </component>
+</project>
